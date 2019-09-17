@@ -1,0 +1,15 @@
+This is the setup scripts for the emulator of w4118.
+
+To run the script, first clone this repo and in the repo directory, run:
+```
+chmod +x *.sh
+./emu_setup.sh
+```
+
+The emulator will be ready shortly.
+
+To run the emulator:
+```
+./run_emulator.sh
+```
+
