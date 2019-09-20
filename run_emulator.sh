@@ -24,7 +24,7 @@ usage()
 while [ "$1" != "" ]; do
 	case $1 in
 		-k | --kernel )	shift
-				KERNEL=$1
+				KERNEL="-kernel $1"
 				SHOW_KERNEL="-show-kernel"
 				;;
 		-e | --emulator ) shift
