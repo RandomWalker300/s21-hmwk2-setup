@@ -7,6 +7,7 @@ KERNEL=""
 EMULATOR_PATH="$HOME/Android/Sdk/tools/emulator"
 NO_WINDOW=""
 RAM=""
+DEBUG=""
 
 usage()
 {
@@ -42,6 +43,9 @@ while [ "$1" != "" ]; do
 		-m | --memory ) shift
 				RAM="-memory $1"
 				;;
+		-d | --debug ) shift
+				DEBUG="-qemu -s -S"
+				;;
 		-h | --help | * )	usage
 					exit
 					;;
@@ -49,4 +53,4 @@ while [ "$1" != "" ]; do
 	shift
 done
 
-$EMULATOR_PATH @$EMULATOR_NAME $NO_SNAP $SHOW_KERNEL $KERNEL $NO_WINDOW
+$EMULATOR_PATH @$EMULATOR_NAME $NO_SNAP $SHOW_KERNEL $KERNEL $NO_WINDOW $DEBUG
