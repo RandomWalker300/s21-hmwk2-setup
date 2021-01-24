@@ -1,6 +1,9 @@
 #!/bin/bash
 
-TMP_DIR=".w4118_hmwk2_setup_tmp"
+sudo usermod -a -G kvm $USER
+sudo apt update
+sudo apt install openjdk-8-jre qemu-system-x86
+
 SDK_DIR="$HOME/Android/Sdk"
 
 cd $HOME
@@ -14,9 +17,9 @@ fi
 
 if [ ! -d ".android" ]; then
 	mkdir .android
-	touch .android/repositories.cfg 
-elif [ ! f ".android/repositories.cfg" ]; then
-	touch .android/repositories.cfg 
+	touch .android/repositories.cfg
+elif [ ! -f ".android/repositories.cfg" ]; then
+	touch .android/repositories.cfg
 fi
 
 cd Android/Sdk
@@ -24,9 +27,11 @@ cd Android/Sdk
 # Download Android Sdk
 wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 unzip -o sdk-tools-linux-4333796.zip
+rm sdk-tools-linux-4333796.zip
 # Downlaod Andoird platform tool
 wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
 unzip -o platform-tools-latest-linux.zip
+rm platform-tools-latest-linux.zip
 
 # Setup sdk
 yes "y" | ./tools/bin/sdkmanager --install 'ndk;20.0.5594570'

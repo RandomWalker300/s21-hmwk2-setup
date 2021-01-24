@@ -13,6 +13,8 @@ To run the emulator:
 ./run_emulator.sh
 ```
 
+If you received error like "ProbeKVM: This user doesn't have permissions to user KVM (/dev/kvm).", just reboot your VM and run the emulator again.
+
 If you feel your emulator is too slow, you can adjust the RAM size with `-m` option:
 ```
 ./run_emulator.sh -m 1024
